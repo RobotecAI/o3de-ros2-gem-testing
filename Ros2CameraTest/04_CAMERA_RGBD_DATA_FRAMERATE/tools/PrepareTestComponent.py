@@ -48,6 +48,6 @@ if __name__ == "__main__":
     editor.EditorComponentAPIBus(bus.Broadcast, "SetComponentProperty", cameraComponentId, path, 400)
 
     path = "Sensor configuration|Frequency"
-    editor.EditorComponentAPIBus(bus.Broadcast, "SetComponentProperty", cameraComponentId, path, 10)
+    editor.EditorComponentAPIBus(bus.Broadcast, "SetComponentProperty", cameraComponentId, path, 35)
 
 

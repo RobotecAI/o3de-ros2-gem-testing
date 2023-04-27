@@ -16,7 +16,7 @@
 
 Execute preparation script in o3de console:
 ```
-pyRunFile /home/michal/Desktop/ROS2GemTest/Ros2CameraTest/CAMERA_RGBD_DATA_VALID/tools/PrepareTestComponent.py
+pyRunFile Ros2CameraTest/04_CAMERA_RGBD_DATA_VALID/tools/PrepareTestComponent.py
 ```
 
 ### Expected result 
@@ -70,7 +70,7 @@ No warnings.
 
 Load simple depth processing pipeline.
 ```
-ros2 launch '/home/michal/Desktop/ROS2GemTest/Ros2CameraTest/CAMERA_RGBD_DATA_VALID/tools/point_cloud_xyzrgb.launch.py' 
+ros2 launch 'Ros2CameraTest/CAMERA_RGBD_DATA_VALID/tools/point_cloud_xyzrgb.launch.py' 
 
 ```
 ### Expected result 
