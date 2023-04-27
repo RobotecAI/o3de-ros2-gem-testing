@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<robot name="urdf_test">
+
+    <material name="darkgrey">
+        <color rgba="0.25 0.25 0.25 0.8"/>
+    </material>
+    <material name="lightgrey">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+    </material>
+    
+    <link name="box_link">
+        <inertial>
+        <origin xyz="0. 0. 0."/>
+        <mass value="1."/>
+        <inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="1 2 1"/>
+            </geometry>
+        </visual>
+        <material name="lightgrey"/>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="1 2 1"/>
+            </geometrys>
+        </collision>
+    </link>
+
+    <link name="sphere_link">
+        <inertial>
+        <origin xyz="0. 0. 0."/>
+        <mass value="1."/>
+        <inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <sphere radius="2"/>
+            </geometry>
+        </visual>
+        <material name="lightgrey"/>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <sphere radius="2"/>
+            </geometry>
+        </collision>
+    </link>
+    
+    <link name="cylinder_link">
+        <inertial>
+        <origin xyz="0. 0. 0."/>
+        <mass value="1."/>
+        <inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="1" length="0.5"/>
+            </geometry>
+        </visual>
+        <material name="lightgrey"/>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="1" length="0.5"/>
+            </geometry>
+        </collision>
+    </link>
+   
+    <link name="suzanne_link">
+        <inertial>
+        <origin xyz="0. 0. 0."/>
+        <mass value="1."/>
+        <inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="suzanne.dae"/>
+            </geometry>
+        </visual>
+        <material name="lightgrey"/>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="suzanne.dae"/>
+            </geometry>
+        </collision>
+    </link>
+   
+
+    <joint name="joint0" type="fixed">
+        <parent link="box_link"/>
+        <child link="sphere_link"/>
+        <axis xyz="0. 0. 1."/>
+        <origin rpy="0. 0. 0." xyz="5. 0. 0."/>
+        <limit effort="1000.0" lower="-2" upper="0.95" velocity="100"/>
+    </joint>
+
+    <joint name="joint1" type="fixed">
+        <parent link="sphere_link"/>
+        <child link="cylinder_link"/>
+        <axis xyz="0. 0. 1."/>
+        <origin rpy="0. 0. 0." xyz="5. 0. 0."/>
+        <limit effort="1000.0" lower="-2" upper="0.95" velocity="100"/>
+    </joint>
+
+    <joint name="joint2" type="fixed">
+        <parent link="cylinder_link"/>
+        <child link="suzanne_link"/>
+        <axis xyz="0. 0. 1."/>
+        <origin rpy="0. 0. 0." xyz="5. 0. 0."/>
+        <limit effort="1000.0" lower="-2" upper="0.95" velocity="100"/>
+    </joint>
+  
+
+</robot>
