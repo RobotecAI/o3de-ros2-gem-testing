@@ -20,3 +20,4 @@
 ### Expected Result:
 
 The Lidar data should be successfully published to the `/lidar_2d/scan` topic and visualized in `rviz2` when the robot prefab is moved around the scene in Game mode. The topic is publishing `LaserScan` messages: https://github.com/ros2/common_interfaces/blob/humble/sensor_msgs/msg/LaserScan.msg
+> Note: Intensities are not currently supported
