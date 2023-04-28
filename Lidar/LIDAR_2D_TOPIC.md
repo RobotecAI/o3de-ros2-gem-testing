@@ -1,5 +1,6 @@
-## Test Case Name: LIDAR_2D_TOPIC
+## Lidar 2D Topic
 
+### Objective: Ensure that Lidar 2D Component is correctly publishing a LaserScan topic
 ### Prerequisites:
 
 - O3DE Editor is running and the scene is already opened.
