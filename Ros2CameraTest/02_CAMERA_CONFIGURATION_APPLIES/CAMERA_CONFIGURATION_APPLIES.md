@@ -115,18 +115,13 @@ p:
 ```
 
 ```
-
-
-
-Step 4
+## Step 5
 Check if metadata follows configuration:
-
-
 
 ```
 ros2 topic echo --once /FooCameraTest/camera_image_color | head -n 10 && \
 ros2 topic echo --once /FooCameraTest/camera_image_depth | head -n 10
-````
+```
 
 ### Expected result 
 ```

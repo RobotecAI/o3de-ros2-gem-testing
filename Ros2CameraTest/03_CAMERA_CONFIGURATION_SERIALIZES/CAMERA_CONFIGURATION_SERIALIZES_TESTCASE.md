@@ -16,7 +16,7 @@
 
 Execute preparation script in o3de console:
 ```
-pyRunFile Ros2CameraTest/CAMERA_CONFIGURATION_APPLIES/tools/PrepareTestComponent.py
+pyRunFile Ros2CameraTest/02_CAMERA_CONFIGURATION_APPLIES/tools/PrepareTestComponent.py
 ```
 
 ### Expected result 
