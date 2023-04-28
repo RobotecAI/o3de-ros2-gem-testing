@@ -86,10 +86,10 @@ In the terminal:
 Press `Ctrl+C` to cancel the previous command and run:
 
 ```bash
-ros2 topic pub -r 10 /base_link/ackermann_vel ackermann_msgs/msg/AckermannDrive "{steering_angle: 0.7, steering_angle_velocity: 0.0, speed: 2.0, acceleration: 0.0, jerk: 0.0}"
+ros2 topic pub -r 10 /base_link/ackermann_vel ackermann_msgs/msg/AckermannDrive "{steering_angle: -0.7, steering_angle_velocity: 0.0, speed: 2.0, acceleration: 0.0, jerk: 0.0}"
 ```
 
 ### Expected result
 
-The robot should drive forward rotating in a counter-clockwise direction. Both frontal wheels should be twisted.
+The robot should drive forward rotating in a clockwise direction. Both frontal wheels should be twisted.
 
