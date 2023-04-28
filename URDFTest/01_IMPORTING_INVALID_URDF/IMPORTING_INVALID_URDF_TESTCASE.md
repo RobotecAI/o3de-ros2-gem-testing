@@ -31,7 +31,7 @@ Windows appears
 - Click next, choose file with "..." button.
 - Navigate to attached `data` directory
 - Pick `chain_invalid.urdf`
-- Click `OK` 
+- Click `Open` 
 - Click `Next`
 
 ### Expected result 

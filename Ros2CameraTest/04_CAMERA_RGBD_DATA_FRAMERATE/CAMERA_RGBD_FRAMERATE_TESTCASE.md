@@ -33,7 +33,7 @@ pyRunFile Ros2CameraTest/04_CAMERA_RGBD_DATA_FRAMERATE/tools/PrepareTestComponen
 ```
 ## Step 2
 
-Start simulation with CNTRL+G
+Start simulation with CTRL+G
 
 ### Expected result 
 No warnings, simulation running at least 60 FPS

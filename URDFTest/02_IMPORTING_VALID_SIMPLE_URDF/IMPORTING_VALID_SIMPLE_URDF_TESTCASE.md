@@ -31,7 +31,7 @@ Windows appears
 - Click next, choose file with "..." button.
 - Navigate to attached `data` directory
 - Pick `chain.urdf`
-- Click `OK` 
+- Click `Open` 
 - Click `Next`
 
 ### Expected result 
@@ -92,7 +92,7 @@ all shapes are drown, monkey has visible mesh and collider.
 
 Run verification script
 ```
-pyRunFile /home/michal/o3de-ros2-gem-testing/URFTest/02_IMPORTING_VALID_SIMPLE_URDF/tools/ValidateURDF.py
+pyRunFile URDFTest/02_IMPORTING_VALID_SIMPLE_URDF/tools/ValidateURDF.py
 ```
 ### Expected result 
 Script succeed:

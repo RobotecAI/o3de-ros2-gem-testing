@@ -36,7 +36,7 @@ pyRunFile Ros2CameraTest/02_CAMERA_CONFIGURATION_APPLIES/tools/PrepareTestCompon
 
 ## Step 2
 
-Start Simulation with CRTL+G
+Start Simulation with CTRL+G
 
 ### Expected result 
 
@@ -116,14 +116,12 @@ p:
 
 ```
 
- ros2 topic echo --once /FooCameraTest/depth_camera_info | grep -A 10 -w 'p:'
 
 
 Step 4
 Check if metadata follows configuration:
 
 
-Check if metadata follows configuration:
 
 ```
 ros2 topic echo --once /FooCameraTest/camera_image_color | head -n 10 && \
