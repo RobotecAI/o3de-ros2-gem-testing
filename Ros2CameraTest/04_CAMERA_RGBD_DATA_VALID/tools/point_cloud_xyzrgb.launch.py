@@ -8,11 +8,7 @@ import launch_ros.descriptions
 from launch_ros.actions import Node
 
 def generate_launch_description():
-    default_rviz = os.path.join(get_package_share_directory('depth_image_proc'),
-                                'launch', 'rviz/point_cloud_xyzrgb.rviz')
     return LaunchDescription([
-  
-
         # launch plugin through rclcpp_components container
         launch_ros.actions.ComposableNodeContainer(
             name='container0',
@@ -20,7 +16,6 @@ def generate_launch_description():
             package='rclcpp_components',
             executable='component_container',
             composable_node_descriptions=[
-                # Driver itself
                 launch_ros.descriptions.ComposableNode(
                     package='depth_image_proc',
                     plugin='depth_image_proc::PointCloudXyzrgbNode',

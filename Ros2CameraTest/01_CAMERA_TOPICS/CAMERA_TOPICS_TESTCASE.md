@@ -60,6 +60,7 @@ rviz2 -d Ros2CameraTest/01_CAMERA_TOPICS/tools/rvizConfig.rviz
 
 - Both depth and RGB image visible
 - Camera follows mouse movement
+
 ![imgStep3](./images/Step3Result.png)
 ### **Actual RESULT:**
 

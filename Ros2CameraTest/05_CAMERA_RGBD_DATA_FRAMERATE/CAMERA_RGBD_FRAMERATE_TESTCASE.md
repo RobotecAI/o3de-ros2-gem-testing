@@ -48,7 +48,6 @@ No warnings, simulation running at least 60 FPS
 Verify framerate (bash command):
 ```bash
 timeout  -s 9 3  ros2 topic hz -s /FooCameraTest/camera_image_color
-
 ```
 ### Expected result 
 ```
@@ -70,7 +69,6 @@ Killed
 Verify framerate:
 ```bash
 timeout  -s 9 3  ros2 topic hz -s /FooCameraTest/camera_image_depth
-
 ```
 ### Expected result 
 ```
@@ -92,7 +90,6 @@ Killed
 Verify framerate:
 ```bash
 timeout  -s 9 3  ros2 topic hz -s /FooCameraTest/color_camera_info
-
 ```
 ### Expected result 
 ```
@@ -114,7 +111,6 @@ Killed
 Verify framerate:
 ```bash
 timeout  -s 9 3  ros2 topic hz -s /FooCameraTest/depth_camera_info
-
 ```
 ### Expected result 
 ```

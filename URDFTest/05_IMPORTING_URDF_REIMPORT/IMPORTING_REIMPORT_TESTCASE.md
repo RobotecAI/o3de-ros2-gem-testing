@@ -36,7 +36,7 @@ Windows appears
 
 ## Step 2 
 
-Clock "..." and navigate to `testing_ws/src/husky/husky_description/urdf/husky.urdf.xacro`, click Next.
+Click "..." and navigate to `testing_ws/src/husky/husky_description/urdf/husky.urdf.xacro`, click Next.
 
 ### Expected result 
 

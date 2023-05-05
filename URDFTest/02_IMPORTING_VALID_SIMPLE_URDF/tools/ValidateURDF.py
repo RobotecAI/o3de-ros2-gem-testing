@@ -7,19 +7,17 @@ import azlmbr.object
 from azlmbr.entity import EntityId
 from azlmbr.entity import EntityType
 
-import subprocess
-DEGREE_RADIAN_FACTOR = 0.0174533
 
 def GetEntityWithName(entityName):
     search_filter = entity.SearchFilter()
     search_filter.names = [entityName]
-    entityIdList = azlmbr.entity.SearchBus(azlmbr.bus.Broadcast, 'SearchEntities', search_filter)
-    assert len(entityIdList) == 1
-    return entityIdList[0]
+    entity_id_list = azlmbr.entity.SearchBus(azlmbr.bus.Broadcast, 'SearchEntities', search_filter)
+    assert len(entity_id_list) == 1
+    return entity_id_list[0]
 
-def CheckIfEntityHasTypeComponents (entityId, typeNameList):
-    typeIdsList = editor.EditorComponentAPIBus(bus.Broadcast, 'FindComponentTypeIdsByEntityType', typeNameList, entity.EntityType().Game)
-    for [componentTypeName, componentType] in zip(typeNameList, typeIdsList):
+def CheckIfEntityHasTypeComponents (entityId, type_name_list):
+    type_ids_list = editor.EditorComponentAPIBus(bus.Broadcast, 'FindComponentTypeIdsByEntityType', type_name_list, entity.EntityType().Game)
+    for [componentTypeName, componentType] in zip(type_name_list, type_ids_list):
             outcome = azlmbr.editor.EditorComponentAPIBus(bus.Broadcast, 'GetComponentOfType', entityId,componentType)
 
             isActive = False
@@ -43,8 +41,3 @@ if __name__ == "__main__":
     print ("Test suzanne_link_visual")
     suzanne_link_visual_id = GetEntityWithName("suzanne_link_visual")
     CheckIfEntityHasTypeComponents(suzanne_link_visual_id, ["Mesh"])
-
-
-
-
-

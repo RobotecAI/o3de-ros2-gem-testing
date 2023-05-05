@@ -79,7 +79,6 @@ Check if metadata follows configuration, resolution:
 ```
 ros2 topic echo --once /FooCameraTest/depth_camera_info | grep -A 10 -w 'p:' && \
 ros2 topic echo --once /FooCameraTest/color_camera_info | grep -A 10 -w 'p:'
-
 ```
 
 ### Expected result 

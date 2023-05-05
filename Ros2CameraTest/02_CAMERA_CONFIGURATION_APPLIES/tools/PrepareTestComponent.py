@@ -7,48 +7,41 @@ import azlmbr.object
 from azlmbr.entity import EntityId
 from azlmbr.entity import EntityType
 
-import subprocess
-DEGREE_RADIAN_FACTOR = 0.0174533
+import math
 
 def GetDefaultCamera():
     search_filter = entity.SearchFilter()
     search_filter.names = ["Camera"]
-    entityIdList = azlmbr.entity.SearchBus(azlmbr.bus.Broadcast, 'SearchEntities', search_filter)
-    assert len(entityIdList) == 1
-    return entityIdList[0]
+    entity_id_list = azlmbr.entity.SearchBus(azlmbr.bus.Broadcast, 'SearchEntities', search_filter)
+    assert len(entity_id_list) == 1
+    return entity_id_list[0]
 
 if __name__ == "__main__":
 
-    typeNameList = ["ROS2 Camera Sensor", "ROS2 Frame"]
-    typeIdsList = editor.EditorComponentAPIBus(bus.Broadcast, 'FindComponentTypeIdsByEntityType', typeNameList, entity.EntityType().Game)
+    type_name_list = ["ROS2 Camera Sensor", "ROS2 Frame"]
+    type_ids_list = editor.EditorComponentAPIBus(bus.Broadcast, 'FindComponentTypeIdsByEntityType', type_name_list, entity.EntityType().Game)
 
-    ROS2CameraSensorTypeId = typeIdsList[0]
+    ros2_camera_sensor_type_id = type_ids_list[0]
 
-    defaultCameraEntity = GetDefaultCamera()
+    default_camera_entity = GetDefaultCamera()
 
-    rosCameraEntityId = azlmbr.editor.ToolsApplicationRequestBus(azlmbr.bus.Broadcast, 'CreateNewEntity', defaultCameraEntity)
-    editor.EditorEntityAPIBus(bus.Event, 'SetName', rosCameraEntityId, "FooCameraTest")
-
-
-    azlmbr.components.TransformBus(azlmbr.bus.Event, "SetLocalRotation", rosCameraEntityId,  azlmbr.math.Vector3(-DEGREE_RADIAN_FACTOR*90.0, 0.0, 0.0))
-
-    outcomeROS2Camera = editor.EditorComponentAPIBus(bus.Broadcast, 'AddComponentsOfType', rosCameraEntityId, typeIdsList )
-    assert outcomeROS2Camera.IsSuccess()
-    cameraComponentOutcome = azlmbr.editor.EditorComponentAPIBus(bus.Broadcast, 'GetComponentOfType', rosCameraEntityId, ROS2CameraSensorTypeId)
-    assert cameraComponentOutcome.IsSuccess()
-    cameraComponentId = cameraComponentOutcome.GetValue()
+    ros_camera_entity_id = azlmbr.editor.ToolsApplicationRequestBus(azlmbr.bus.Broadcast, 'CreateNewEntity', default_camera_entity)
+    editor.EditorEntityAPIBus(bus.Event, 'SetName', ros_camera_entity_id, "FooCameraTest")
 
 
-    cameraComponentId = cameraComponentOutcome.GetValue()
+    azlmbr.components.TransformBus(azlmbr.bus.Event, "SetLocalRotation", ros_camera_entity_id,  azlmbr.math.Vector3(math.radians(-90.0), 0.0, 0.0))
+
+    outcome_ros_camera = editor.EditorComponentAPIBus(bus.Broadcast, 'AddComponentsOfType', ros_camera_entity_id, type_ids_list )
+    assert outcome_ros_camera.IsSuccess()
+    camera_component_outcome = azlmbr.editor.EditorComponentAPIBus(bus.Broadcast, 'GetComponentOfType', ros_camera_entity_id, ros2_camera_sensor_type_id)
+    assert camera_component_outcome.IsSuccess()
+    camera_component_id = camera_component_outcome.GetValue()
 
     path = "Camera configuration|Vertical field of view"
-    editor.EditorComponentAPIBus(bus.Broadcast, "SetComponentProperty", cameraComponentId, path, 25)
+    editor.EditorComponentAPIBus(bus.Broadcast, "SetComponentProperty", camera_component_id, path, 25)
 
     path = "Camera configuration|Image width"
-    editor.EditorComponentAPIBus(bus.Broadcast, "SetComponentProperty", cameraComponentId, path, 1200)
+    editor.EditorComponentAPIBus(bus.Broadcast, "SetComponentProperty", camera_component_id, path, 1200)
     
     path = "Camera configuration|Image height"
-    editor.EditorComponentAPIBus(bus.Broadcast, "SetComponentProperty", cameraComponentId, path, 600)
-
-    
-    
+    editor.EditorComponentAPIBus(bus.Broadcast, "SetComponentProperty", camera_component_id, path, 600)
