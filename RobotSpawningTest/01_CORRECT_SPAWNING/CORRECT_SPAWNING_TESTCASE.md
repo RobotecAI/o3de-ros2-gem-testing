@@ -22,7 +22,7 @@ Launch the system terminal and run:
 
 ```bash
 source /opt/ros/humble/setup.bash
-ros2 topic list -t
+ros2 topic list | grep proteus | wc -l && ros2 service list | grep proteus | wc -l
 ```
 
 Leave the terminal open - it will be needed in the next steps.
@@ -31,7 +31,10 @@ Leave the terminal open - it will be needed in the next steps.
 
 ### Expected result
 
-- It should NOT include any messages of type: `proteus_1/...`, ` proteus_2/...`, etc.
+```bash
+0
+0
+```
 
 ## Step 3
 
@@ -42,6 +45,7 @@ ros2 service call /spawn_entity gazebo_msgs/srv/SpawnEntity '{name: 'proteus', x
 ```
 
 ### Expected result
+Commands were executed with success.
 
 ![](images/result.png)
 
