@@ -1,0 +1,8 @@
+<?xml version='1.0'?>
+<robot name="rosbot_xl" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:arg name="use_sim" default="false" />
+
+  <xacro:include filename="$(find FOOO)/Bar.xacro"/>
+	<naughty_tag><naughty_tag>
+</robot>
