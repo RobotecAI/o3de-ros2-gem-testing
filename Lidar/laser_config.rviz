@@ -1,0 +1,47 @@
+# rviz configuration file for LaserScan visualization
+
+GlobalOptions:
+  FixedFrame: "laser_frame"
+
+Visualization Manager:
+  UseGL: true
+  TimePanel:
+    TimeEnabled: true
+    UseWallTime: true
+    SyncMode: true
+  Views:
+    - ID: 0
+      Enabled: true
+      Type: "rviz/RenderPanel"
+      Name: "Main View"
+      Camera:
+        Pose:
+          Position:
+            X: 2.0
+            Y: 0.0
+            Z: 1.0
+          Orientation:
+            X: 0.0
+            Y: 0.0
+            Z: 0.0
+            W: 1.0
+        ProjectionType: "perspective"
+        NearClip: 0.01
+        FarClip: 1000.0
+        Fov: 1.0472
+  Displays:
+    - Name: "LaserScan"
+      Enabled: true
+      Type: "rviz/LaserScan"
+      Topic: "/lidar_2d/scan"
+      ColorTransformer:
+        ColorMode: "intensity"
+        ColorBounds:
+          Max: 10.0
+          Min: 0.0
+        UseFixedFrame: true
+      SizeTransformer:
+        SizeType: "fixed"
+        SizePixels: 3.0
+      DecayTime: 0.1
+      QueueSize: 10
