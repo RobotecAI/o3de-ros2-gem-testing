@@ -20,6 +20,8 @@ Press `Ctrl+G` to start simulation.
 
 Check if the data published is correct `ros2 topic echo /odom` and changes over time. Also check the frequency. `ros2 topic hz /odom` Modify the parameters of the sensor and repeat the test.
 
+To check if data is correct use visual inspection with rviz2, check if the data is smooth and the orientation is correct. Also can add collider to the box and check if the data is correct when the box is not moving. Change the parameters (including frequency) of the sensor and repeat the test.
+
 ### Step 4 Extra
 
 Add the `ROS2 Odometry Sensor` component to the `body_link` of the ROSBot prefab. Press `Ctrl+G` to start simulation. Check if the sensor publishes data `ros2 topic echo /odom` and how the data changes. Also the data visualization tool like plotjuggler can be used to visualize the data and check if the published data is smooth.
