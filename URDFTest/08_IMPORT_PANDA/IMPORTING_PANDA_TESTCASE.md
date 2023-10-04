@@ -1,6 +1,6 @@
 # Test Goal
 
- - Check if in the wild URDF (PANDA FRANKA) imports
+ - Check in the wild if URDF (PANDA FRANKA) imports
 
 # Test Perquisite
 
@@ -9,7 +9,7 @@
  - O3DE Editor running
  - colcon build, git
 
- Prepare, build ad source workspace
+ Prepare, build and source workspace
 
 ```
 sudo apt-get install

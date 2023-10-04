@@ -1,6 +1,6 @@
 # Test Goal
 
- - Check if in the wild URDF (Clearpath Husky) imports
+ - Check in the wild if URDF (Clearpath Husky) imports
 
 # Test Perquisite
 
@@ -9,7 +9,7 @@
  - O3DE Editor running
  - colcon build, git
 
- Prepare, build ad source workspace
+ Prepare, build and source workspace
 
 ```
 mkdir -p testing_ws/src && cd testing_ws/src && \
@@ -17,12 +17,11 @@ git clone https://github.com/jackal/jackal.git && \
 cd jackal && git checkout 017b8b581a90873047f7d6fe438bd87513be4a76  && \
 cd ../.. && colcon build && source install/setup.sh
 ```
-Install mising package:
+Install missing package:
 ```
 sudo apt-get install ros-humble-velodyne-description
 ```
 
-**Do not forget to source your test workspace**
 # Steps
 
 ## Step 1 

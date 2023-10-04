@@ -1,6 +1,6 @@
 # Test Goal
 
- - Check if in the wild URDF (TM14S) imports
+ - Check in the wild if URDF (TM14S) imports
 
 # Test Perquisite
 
@@ -9,7 +9,7 @@
  - O3DE Editor running
  - colcon build, git
 
- Prepare, build ad source workspace
+ Prepare, build and source workspace
 
 ```
 mkdir -p testing_ws/src && cd testing_ws/src && \
@@ -20,7 +20,6 @@ touch tmr_ros2/demo/COLCON_IGNORE &&\
 touch tmr_ros2/tm_driver/COLCON_IGNORE &&\
 cd .. && colcon build && source install/setup.sh
 ```
-**Do not forget to source your test workspace**
 # Steps
 
 ## Step 1 

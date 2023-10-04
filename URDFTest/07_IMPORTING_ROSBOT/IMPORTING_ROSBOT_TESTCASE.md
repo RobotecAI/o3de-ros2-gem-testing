@@ -1,6 +1,6 @@
 # Test Goal
 
- - Check if in the wild URDF (Husarion XL) imports
+ - Check in the wild if URDF (Husarion XL) imports
 
 # Test Perquisite
 
@@ -9,7 +9,7 @@
  - O3DE Editor running
  - colcon build, git
 
- Prepare, build ad source workspace
+ Prepare, build and source workspace
 
 ```
 mkdir -p testing_ws/src && cd testing_ws/src && \
@@ -17,7 +17,6 @@ git clone https://github.com/husarion/rosbot_xl_ros.git && cd rosbot_xl_ros && g
 git clone https://github.com/husarion/ros_components_description.git && cd ros_components_description && git checkout 5f94c332c866c8e39f6854f77d98651a2a3ae226 && cd .. && \
 cd .. && colcon build && source install/setup.sh
 ```
-**Do not forget to source your test workspace**
 # Steps
 
 ## Step 1 
