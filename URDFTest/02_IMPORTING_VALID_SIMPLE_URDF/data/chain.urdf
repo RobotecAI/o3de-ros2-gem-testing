@@ -87,7 +87,7 @@
         <collision>
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <geometry>
-                <mesh filename="suzanne.dae"/>
+                <mesh filename="suzanne.stl"/>
             </geometry>
         </collision>
     </link>
